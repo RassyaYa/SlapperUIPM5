@@ -17,5 +17,5 @@ use ras\Forms\Form;
 class main extends PluginBase implements Listener {
 
     public function onEnable() : void {
-        $this->getLogger()->info(tf::GREEN. "Enable Tutorial");
+        $this->getLogger()->info(tf::GREEN. "Plugin Enable");
     }
