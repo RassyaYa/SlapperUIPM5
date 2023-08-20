@@ -19,3 +19,37 @@ class main extends PluginBase implements Listener {
     public function onEnable() : void {
         $this->getLogger()->info(tf::GREEN. "Plugin Enable");
     }
+     function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : Bool {
+        if($cmd->getName() === "slapperui") {
+            if($sender instanceof Player) {
+                $this->slapperui($sender);
+            } else {
+                $sender->sendMessage(tf::RED. "In-Game");
+            }
+            return true;
+        }
+     }
+    public function slapperui($sender) : void {
+        $form = new SimpleForm(function(Player $sender, $data){
+            if($data === null){
+                return true;
+            }
+            switch($data){
+                case 0:
+                $this->create($player);
+                break;
+            }
+        });
+        $form->setTitle("§6» §eSlapperUI §6«§r");
+        $form->addButton("EXIT", 0, "textures/blocks/barrier");
+        $form->addButton("CREATE", 0, "textures/ui/confirm");
+        $form->addButton("CHECK ID", 0, "textures/ui/magnifyingGlass");
+        $form->addButton("ADD COMMAND", 0, "textures/items/banner_pattern");
+        $form->addButton("DEL COMMAND", 0, "textures/ui/trash");
+        $form->addButton("SET SCALE", 0, "textures/items/paper");
+        $form->addButton("TELEPORT HERE", 0, "textures/ui/icon_import");
+        $form->addButton("CHANGE NAME", 0, "textures/items/name_tag");
+        $form->addButton("REMOVE", 0, "textures/ui/cancel");
+        $form->sendToPlayer($sender);
+    }
+}
