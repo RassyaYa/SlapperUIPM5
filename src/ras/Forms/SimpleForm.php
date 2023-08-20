@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace jic\Forms;
+namespace ras\Forms;
 
 class SimpleForm extends Form {
 
