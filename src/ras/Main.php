@@ -38,14 +38,34 @@ class main extends PluginBase implements Listener {
                 case 0:
                 $this->create($player);
                 break;
+
+                case 1:
+                $this->getServer()->dispatchCommand($player, "slapper id");
+                break;
+
+                case 2:
+                $this->remove($player);
+                break;
+
+                case 3:
+                $this->rename($player);
+                break;
+
+                case 4:
+                $this->addcommand($player);
+                break;
+
+                case 5:
+                this->removecommand($player);
+                break;
             }
         });
         $form->setTitle("§6» §eSlapperUI §6«§r");
         $form->addButton("EXIT", 0, "textures/blocks/barrier");
-        $form->addButton("CREATE", 0, "textures/ui/confirm");
-        $form->addButton("CHECK ID", 0, "textures/ui/magnifyingGlass");
+        $form->addButton("Create Slapper", 0, "textures/ui/confirm");
+        $form->addButton("Get ID", 0, "textures/ui/magnifyingGlass");
         $form->addButton("ADD COMMAND", 0, "textures/items/banner_pattern");
-        $form->addButton("DEL COMMAND", 0, "textures/ui/trash");
+        $form->addButton("DEL COMMAND", 0, "textures/ui/tash");
         $form->addButton("SET SCALE", 0, "textures/items/paper");
         $form->addButton("TELEPORT HERE", 0, "textures/ui/icon_import");
         $form->addButton("CHANGE NAME", 0, "textures/items/name_tag");
@@ -53,3 +73,4 @@ class main extends PluginBase implements Listener {
         $form->sendToPlayer($sender);
     }
 }
+u
