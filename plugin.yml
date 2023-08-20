@@ -1,0 +1,4 @@
+name: SlapperUIPM5
+main: ras/Main
+api: 5.0.0
+version: 1.0.0
